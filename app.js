@@ -16,4 +16,8 @@ app.get('/', function(req,res) {
     res.render('login');
 })
 
+app.get('/dashboard', function(req,res) {
+    res.render('dashboard');
+})
+
 http.listen(port,()=>{console.log("Running on port "+port);});
