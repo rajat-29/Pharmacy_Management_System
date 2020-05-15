@@ -10,10 +10,6 @@
     border-collapse: collapse;
 }
 
-.addStockTableRow {
-    border: 1px solid  #e0e0e0;
-  }
-  
 .addStockTableHeading {
     border: 1px solid  #e0e0e0;
     text-align: left;
