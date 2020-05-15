@@ -43,12 +43,10 @@ app.use(
     })
 );
 
+app.use('/',require('./Routes/'));
+
 app.get("/", function (req, res) {
     res.render("login");
-});
-
-app.get("/dashboard", function (req, res) {
-    res.render("dashboard");
 });
 
 http.listen(port, () => {
