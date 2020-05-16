@@ -5,11 +5,12 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
                 User
             </button>
-            <div class="dropdown-menu m-2 p-2" style="display: flex;flex-direction: column;"
-                aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" style="padding: 2px;" href="/admin/profile">Profile</a>
-                <a class="dropdown-item" style="padding: 2px;" href="/admin/changepassword">Change Password</a>
-                <a class="dropdown-item" style="padding: 2px;" onclick="logoutUser()" href="#">LogOut</a>
+            <div class="dropdown-menu m-2 p-2" aria-labelledby="dropdownMenuButton">
+                <div style="display: flex;flex-direction: column;">
+                    <a class=" dropdown-item" style="padding: 2px;" href="/admin/profile">Profile</a>
+                    <a class="dropdown-item" style="padding: 2px;" href="/admin/changepassword">Change Password</a>
+                    <a class="dropdown-item" style="padding: 2px;" onclick="logoutUser()" href="#">LogOut</a>
+                </div>
             </div>
         </div>
         <!-- <button type="submit" class="btn btn-primary" style="float: right;margin-right: 2%;margin-top: 0.5%;"

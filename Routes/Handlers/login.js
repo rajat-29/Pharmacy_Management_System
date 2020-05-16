@@ -13,6 +13,6 @@ app.get("/logutUser", function (req, res) {
     res.render("login");
 });
 
-app.post("/checkLogin", Controller.login.checkLogin);
+app.post("/checkLogin", Controller.user.checkLogin);
 
 module.exports = app;

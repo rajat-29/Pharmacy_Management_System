@@ -1,9 +1,9 @@
-var login = require("./login")
+var user = require("./user")
 var userbilling = require("./user-billing")
 var billing = require("./billing")
 
 module.exports = {
-    login,
+    user,
     billing,
     userbilling,
 }
