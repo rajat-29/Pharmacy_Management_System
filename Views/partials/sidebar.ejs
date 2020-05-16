@@ -1,6 +1,6 @@
 
 <div class="top-bar">
-    <button type="submit" class="btn btn-primary" style="float: right;margin-right: 2%;margin-top: 0.5%;">Logout</button><br>
+    <button type="submit" class="btn btn-primary" style="float: right;margin-right: 2%;margin-top: 0.5%;" onclick="logoutUser()">Logout</button><br>
 </div>
 
 <nav class="menu" tabIndex="0">
@@ -62,3 +62,12 @@
   
     </ul>
 </nav>
+
+<script>
+
+function logoutUser()
+{
+    window.location = '/login/logutUser';
+}
+
+</script>
