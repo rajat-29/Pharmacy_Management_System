@@ -1,7 +1,19 @@
 <div class="custom_sidebar">
     <div class="top-bar">
-        <button type="submit" class="btn btn-primary" style="float: right;margin-right: 2%;margin-top: 0.5%;"
-            onclick="logoutUser()">Logout</button><br>
+        <div class="dropdown" style="float: right;margin-right: 90px;margin-top:5px;padding: 2px;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
+                User
+            </button>
+            <div class="dropdown-menu m-2 p-2" style="display: flex;flex-direction: column;"
+                aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" style="padding: 2px;" href="/admin/profile">Profile</a>
+                <a class="dropdown-item" style="padding: 2px;" href="/admin/changepassword">Change Password</a>
+                <a class="dropdown-item" style="padding: 2px;" onclick="logoutUser()" href="#">LogOut</a>
+            </div>
+        </div>
+        <!-- <button type="submit" class="btn btn-primary" style="float: right;margin-right: 2%;margin-top: 0.5%;"
+            onclick="logoutUser()">Logout</button><br> -->
     </div>
 
     <nav class="menu" tabIndex="0">

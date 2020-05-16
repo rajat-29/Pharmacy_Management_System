@@ -19,4 +19,6 @@ app.get("/dashboard", function (req, res) {
 
 app.get("/profile", Controllers.userbilling.getProfileDetails);
 
+app.post("/updateprofile", Controllers.billing.updateprofile);
+
 module.exports = app;
