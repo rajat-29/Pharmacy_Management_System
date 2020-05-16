@@ -1,19 +1,18 @@
-let express = require('express');
-var app = require('express').Router();
-let path = require('path');
+let express = require("express");
+var app = require("express").Router();
+var bodyParser = require("body-parser");
 
-app.use(express.static(path.join(__dirname,'../../Public')));
+app.use(bodyParser.json());
 
-let loginController = require('../../Controllers/login');
+/* Controllers */
+let Controller = require("../../Controllers");
 
-app.get('/logutUser', function(req,res) {
+app.get("/logutUser", function (req, res) {
     req.session.isLogin = 0;
     req.session.destroy();
-    res.render('login');
-})
+    res.render("login");
+});
 
-// controllers //
-
-app.use('/checkLogin',loginController.checkLogin);
+app.post("/checkLogin", Controller.login.checkLogin);
 
 module.exports = app;

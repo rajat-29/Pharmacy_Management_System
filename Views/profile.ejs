@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="/css/partial.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div id="viewscreen">
+        <%- include('partials/sidebar.ejs') %>
+
+        <div class="container">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-8" style="border: 5px solid rgba(0,0,0,0.1);margin-top: 40px;">
+                <center>
+                    <h1 class="heading" style="color: black;">Profile</h1>
+                </center>
+                <div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="name" class="form-control" name="name" id="name" value="<%= normal_details.name %>"
+                            placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="email"
+                            value="<%= normal_details.email %>" required disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="number" class="form-control" name="phoneno" value="<%= billing_details.phoneno %>"
+                            id="phoneno" placeholder="phoneno" maxlength="10" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>DOB :</label>
+                            <input class=" form-control dobDate" name="DOB" placeholder="MM/DD/YYYY" id="DOB"
+                                type="date" autocomplete="off" value="<%= normal_details.DOB %>" required=""> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="address" name="address"
+                            value="<%= billing_details.address %>" placeholder="Address required" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>state</label>
+                            <input type="text" class="form-control" id="state" value="<%= billing_details.state %>"
+                                name="city" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>City</label>
+                            <input type="text" class="form-control" id="city" value="<%= billing_details.city %>"
+                                name="city" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" name="zipcode" class="form-control"
+                                value="<%= billing_details.zipcode %>" id="zipcode" required>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Update Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

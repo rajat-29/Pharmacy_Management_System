@@ -31,9 +31,6 @@ app.use(
     })
 );
 
-app.engine("ejs", engine);
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "Views"));
 
 app.use(express.static(path.join(__dirname, "/Public")));
 app.use(bodyParser.json());
@@ -43,7 +40,11 @@ app.use(
     })
 );
 
-app.use('/',require('./Routes/'));
+app.engine("ejs", engine);
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "Views"));
+
+app.use('/', require('./Routes/'));
 
 app.get("/", function (req, res) {
     res.render("login");

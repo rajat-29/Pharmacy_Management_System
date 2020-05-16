@@ -1,103 +1,111 @@
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link href="css/partial.css" rel="stylesheet" type = "text/css">
-        <link href="css/style.css" rel="stylesheet" type = "text/css">
-    </head>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="/css/partial.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
 <body>
 
-<div id="viewscreen" >
-    <%- include('partials/sidebar.ejs') %>
-    <div class="container">
-        <div class="col-sm-3"></div>
-            <div class="col-sm-8" style="border: 5px solid rgba(0,0,0,0.1);margin-top: 40px;">              
-                <center><h1 class="heading" style="color: black;">Billing</h1></center>
-                        <table class="addStockBoxTable table">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th class="addStockTableHeading" scope="col">
-                                        <span class="addStockHeadingText">Doctor Name</span>
-                                    </th>
-                                    <th class="addStockTableHeading">
-                                        <span class="addStockHeadingText" scope="col">Customer Name</span>
-                                    </th>
-                                    <th class="addStockTableHeading">
-                                        <span class="addStockHeadingText" scope="col">Customer Contact</span>
-                                    </th>           
-                                </tr>
-                            </thead>    
+    <div id="viewscreen">
+        <%- include('partials/sidebar.ejs') %>
+        <div class="container">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-8" style="border: 5px solid rgba(0,0,0,0.1);margin-top: 40px;">
+                <center>
+                    <h1 class="heading" style="color: black;">Billing</h1>
+                </center>
+                <table class="addStockBoxTable table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Doctor Name</span>
+                            </th>
+                            <th class="addStockTableHeading">
+                                <span class="addStockHeadingText" scope="col">Customer Name</span>
+                            </th>
+                            <th class="addStockTableHeading">
+                                <span class="addStockHeadingText" scope="col">Customer Contact</span>
+                            </th>
+                        </tr>
+                    </thead>
 
-                            <tbody>
-                                <tr class="addStockTableRow">
-                                    <td class="addStockTableHeading" scope="row">
-                                        <input type="text" class="form-control" placeholder="Enter Doctor Name"><br>
-                                    </td>
-                                    <td class="addStockTableHeading" scope="row">
-                                        <input type="text" class="form-control" placeholder="Enter Customer Name"><br>
-                                    </td>
-                                    <td class="addStockTableHeading" scope="row">
-                                        <input type="text" class="form-control" placeholder="Enter Customer Contact"><br>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <tbody>
+                        <tr class="addStockTableRow">
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Doctor Name"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Customer Name"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Customer Contact"><br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                        <table class="addStockBoxTable table">
-                            <thead class="thead-light">
-                                <tr class="addStockTableRow">
-                                    <th class="addStockTableHeading" scope="col">
-                                        <span class="addStockHeadingText">Medicine</span>
-                                    </th>
-                                    <th class="addStockTableHeading" scope="col">
-                                        <span class="addStockHeadingText">Quantity</span>
-                                    </th>
-                                    <th class="addStockTableHeading" scope="col">
-                                        <span class="addStockHeadingText">Price</span>
-                                    </th>
-                                    <th class="addStockTableHeading" scope="col">
-                                        <span class="addStockHeadingText">Discount(%)</span>
-                                    </th>
-                                    <th class="addStockTableHeading" scope="col">
-                                        <span class="addStockHeadingText">Tax(%)</span>
-                                    </th>   
-                                    <th class="addStockTableHeading">
-                                    </th>           
-                                </tr>
-                            </thead>
-                            
-                            <tbody>
+                <table class="addStockBoxTable table">
+                    <thead class="thead-light">
+                        <tr class="addStockTableRow">
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Medicine</span>
+                            </th>
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Quantity</span>
+                            </th>
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Price</span>
+                            </th>
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Discount(%)</span>
+                            </th>
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Tax(%)</span>
+                            </th>
+                            <th class="addStockTableHeading">
+                            </th>
+                        </tr>
+                    </thead>
 
-                                <tr class="addStockTableRow">
-                                    <td class="addStockTableHeading" scope="row">
-                                        <input type="text" class="form-control" placeholder="Enter Medicine"><br>
-                                    </td>
-                                    <td class="addStockTableHeading" scope="row">
-                                        <input type="number" class="form-control" placeholder="Enter Quantity"><br>
-                                    </td>
-                                    <td class="addStockTableHeading" scope="row">
-                                        <input type="number" class="form-control" placeholder="Enter Price"><br>
-                                    </td>
-                                    <td class="addStockTableHeading" scope="row">
-                                        <input type="number" class="form-control" placeholder="Enter Discount"><br>
-                                    </td>
-                                    <td class="addStockTableHeading" scope="row">
-                                        <input type="number" class="form-control" placeholder="Enter Tax"><br>
-                                    </td>
-                                    <td class="addStockTableHeading" scope="row">
-                                        <button type="submit" class="btn btn-success"><i class="fa fa-plus" style="margin-right: 10%;"></i>Add</button><br>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash" style="margin-right: 10%;"></i>Delete</button>
-                        <br><br>
+                    <tbody>
+
+                        <tr class="addStockTableRow">
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Medicine"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="number" class="form-control" placeholder="Enter Quantity"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="number" class="form-control" placeholder="Enter Price"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="number" class="form-control" placeholder="Enter Discount"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="number" class="form-control" placeholder="Enter Tax"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <button type="submit" class="btn btn-success"><i class="fa fa-plus"
+                                        style="margin-right: 10%;"></i>Add</button><br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"
+                        style="margin-right: 10%;"></i>Delete</button>
+                <br><br>
             </div>
-        </div>          
+        </div>
     </div>
-</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>

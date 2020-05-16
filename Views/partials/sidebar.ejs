@@ -1,73 +1,71 @@
+<div class="custom_sidebar">
+    <div class="top-bar">
+        <button type="submit" class="btn btn-primary" style="float: right;margin-right: 2%;margin-top: 0.5%;"
+            onclick="logoutUser()">Logout</button><br>
+    </div>
 
-<div class="top-bar">
-    <button type="submit" class="btn btn-primary" style="float: right;margin-right: 2%;margin-top: 0.5%;" onclick="logoutUser()">Logout</button><br>
-</div>
+    <nav class="menu" tabIndex="0">
 
-<nav class="menu" tabIndex="0">
+        <header class="avatar">
+            <img src="/images/a.svg" alt="..." />
+            <h3 style="color:#fff">Pharma Track</h3>
+        </header>
 
-    <header class="avatar">
-        <img src="images/a.svg" alt="..." />
-        <h3 style="color:#fff">Pharma Track</h3>
-    </header>
-           
-    <ul>
-        <li tabIndex="0" >
-            <span style="color: white" class="menu-links">
-                <i class="fas fa-tachometer-alt fa-2x" style="color: white;margin-right: 20px;"></i>
+        <ul>
+            <li tabIndex="0">
+                <span style="color: white" class="menu-links">
+                    <i class="fas fa-tachometer-alt fa-2x" style="color: white;margin-right: 20px;"></i>
                     Dashboard
-            </span>
-        </li>
+                </span>
+            </li>
 
-        <li tabIndex="0" >
-            <span style="color: white" class="menu-links">
-                <i class="fas fa-clipboard-list fa-2x" style="color: white;margin-right: 20px;"></i>
+            <li tabIndex="0">
+                <span style="color: white" class="menu-links">
+                    <i class="fas fa-clipboard-list fa-2x" style="color: white;margin-right: 20px;"></i>
                     Billing Logs
-            </span>
-        </li>
+                </span>
+            </li>
 
-        <li tabIndex="0" >
-            <span style="color: white" class="menu-links">
-                <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
+            <li tabIndex="0">
+                <span style="color: white" class="menu-links">
+                    <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
                     Add Medicines
-            </span>
-        </li>
+                </span>
+            </li>
 
-        <li tabIndex="0" >
-            <span style="color: white" class="menu-links">
-                <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
+            <li tabIndex="0">
+                <span style="color: white" class="menu-links">
+                    <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
                     Add Stocks
-            </span>
-        </li>
+                </span>
+            </li>
 
-        <li tabIndex="0" >
-            <span style="color: white" class="menu-links">
-                <i class="fas fa-table fa-2x" style="color: white;margin-right: 20px;"></i>
+            <li tabIndex="0">
+                <span style="color: white" class="menu-links">
+                    <i class="fas fa-table fa-2x" style="color: white;margin-right: 20px;"></i>
                     Stock Table
-            </span>
-        </li>
+                </span>
+            </li>
 
-        <li tabIndex="0" >
-            <span style="color: white" class="menu-links">
-                <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
+            <li tabIndex="0">
+                <span style="color: white" class="menu-links">
+                    <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
                     Vendors
-            </span>
-        </li>
+                </span>
+            </li>
 
-        <li tabIndex="0" >
-            <span style="color: white" class="menu-links">
-                <i class="fas fa-chart-pie fa-2x" style="color: white;margin-right: 20px;"></i>
+            <li tabIndex="0">
+                <span style="color: white" class="menu-links">
+                    <i class="fas fa-chart-pie fa-2x" style="color: white;margin-right: 20px;"></i>
                     Reorder
-            </span>
-        </li>
-  
-    </ul>
-</nav>
+                </span>
+            </li>
 
+        </ul>
+    </nav>
+</div>
 <script>
-
-function logoutUser()
-{
-    window.location = '/login/logutUser';
-}
-
+    function logoutUser() {
+        window.location = '/login/logutUser';
+    }
 </script>
