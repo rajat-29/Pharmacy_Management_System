@@ -1,7 +1,85 @@
+mediName = document.getElementById('medicines_name');
+quantity = document.getElementById('quantity');
+price = document.getElementById('price');
+discount = document.getElementById('discount');
+tax = document.getElementById('taxes');
+
+var medicineArray = [];
+var index = 0;
+
+function fetchMedicines() {
+    var medicineData;
+	var request = new XMLHttpRequest();
+    request.open('GET','/admin/fetchMedicines');
+    request.send();
+    request.onload = function() {
+        medicineData = JSON.parse(request.responseText);
+        var options = '';
+        for(i in medicineData) {
+            options += '<option value="'+medicineData[i].name+'" />';
+        }
+        document.getElementById('medicines').innerHTML = options;
+    }
+}
+
+function addMedicineToArray() {
+
+    if(mediName.value == '' || quantity.value == '' || price.value == '' || discount.value == '' || tax.value == '') {
+        alert("Fields are Empty");
+        return;
+    }
+
+    if(index > 0) {
+        console.log(index)
+        var itemHeader = document.getElementById('itemHeader');
+        document.getElementById("totalItemsTable").removeChild(itemHeader);
+
+        var itemFooter = document.getElementById('itemFooter');
+        document.getElementById("totalItemsTable").removeChild(itemFooter);
+    }
+
+    var obj = new Object();
+    obj.mediName = mediName.value;
+    obj.quantity = quantity.value;
+    obj.price = price.value;
+    obj.discount = discount.value;
+    obj.tax = tax.value;
+    obj.total = calculateSingleMedicineAmount(obj.quantity,obj.price,obj.discount,obj.tax);
+
+    medicineArray[index] = obj;
+
+    createHeader();
+    createBody(medicineArray[index],index);
+    createFooter(index);
+    index++;
+
+    mediName.value = ''; 
+    quantity.value = '';
+    price.value = '';
+    discount.value = ''; 
+    tax.value = '';
+}
+
+function calculateSingleMedicineAmount(quantity,price,discount,tax) {
+    
+    var newPrice = quantity*price;
+
+    var discountValue = (discount*newPrice)/100;
+
+    newPrice = newPrice - discountValue;
+
+    var salesValue = (tax*newPrice)/100;
+
+    newPrice = newPrice - salesValue;
+
+    return newPrice;
+}
+
 function createHeader() {
 
     var table = document.getElementById('totalItemsTable');
     var thead = document.createElement('thead');
+    thead.setAttribute("id","itemHeader")
 
     var tr1 = document.createElement('tr');
     tr1.setAttribute("class","addStockTableRow");
@@ -91,9 +169,10 @@ function createHeader() {
     table.appendChild(thead);
 }
 
-function createBody() {
+function createBody(obj,i) {
     var table = document.getElementById('totalItemsTable');
     var tbody = document.createElement('tbody');
+    tbody.setAttribute("id","itemBodies")
 
     var tr1 = document.createElement('tr');
     tr1.setAttribute("class","addStockTableRow");
@@ -103,7 +182,7 @@ function createBody() {
 
     var span1 = document.createElement('span');
     span1.setAttribute("class","addStockHeadingText");
-    span1.innerHTML = "1";
+    span1.innerHTML = i+1;
 
     th1.appendChild(span1);
 
@@ -112,7 +191,7 @@ function createBody() {
 
     var span2 = document.createElement('span');
     span2.setAttribute("class","addStockHeadingText");
-    span2.innerHTML = "HCQS";
+    span2.innerHTML = obj.mediName;
 
     th2.appendChild(span2);
 
@@ -121,7 +200,7 @@ function createBody() {
 
     var span3 = document.createElement('span');
     span3.setAttribute("class","addStockHeadingText");
-    span3.innerHTML = "1";
+    span3.innerHTML = obj.quantity;
 
     th3.appendChild(span3);
 
@@ -130,7 +209,7 @@ function createBody() {
 
     var span4 = document.createElement('span');
     span4.setAttribute("class","addStockHeadingText");
-    span4.innerHTML = "1";
+    span4.innerHTML = obj.price;
 
     th4.appendChild(span4);
 
@@ -139,7 +218,7 @@ function createBody() {
 
     var span5 = document.createElement('span');
     span5.setAttribute("class","addStockHeadingText");
-    span5.innerHTML = "1";
+    span5.innerHTML = obj.discount;
 
     th5.appendChild(span5);
 
@@ -148,7 +227,7 @@ function createBody() {
 
     var span6 = document.createElement('span');
     span6.setAttribute("class","addStockHeadingText");
-    span6.innerHTML = "1";
+    span6.innerHTML = obj.tax;
 
     th6.appendChild(span6);
 
@@ -157,7 +236,7 @@ function createBody() {
 
     var span7 = document.createElement('span');
     span7.setAttribute("class","addStockHeadingText");
-    span7.innerHTML = "1";
+    span7.innerHTML = obj.total;
 
     th7.appendChild(span7);
 
@@ -186,9 +265,11 @@ function createBody() {
     table.appendChild(tbody);
 }
 
-function createFooter() {
+function createFooter(i) {
+    var a = parseInt(i);
     var table = document.getElementById('totalItemsTable');
     var tbody = document.createElement('tbody');
+    tbody.setAttribute("id","itemFooter")
 
     var tr1 = document.createElement('tr');
     tr1.setAttribute("class","addStockTableRow");
@@ -200,7 +281,7 @@ function createFooter() {
 
     var span1 = document.createElement('span');
     span1.setAttribute("class","addStockHeadingText");
-    span1.innerHTML = "T.Q = 2";
+    span1.innerHTML = "T.Q = " + ++a;
 
     th1.appendChild(span1);
 
@@ -230,7 +311,8 @@ function createFooter() {
     table.appendChild(tbody);
 }
 
-createHeader();
-createBody();
-createBody();
-createFooter();
+// createHeader();
+// createBody();
+// createFooter();
+
+fetchMedicines();

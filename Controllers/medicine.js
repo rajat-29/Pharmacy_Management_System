@@ -10,3 +10,14 @@ exports.addMedicineType = async (req, res) => {
         res.send("false")
     })
 }
+
+exports.fetchMedicines = async (req,res) => {
+    Medicine.find({
+
+    }).then((result) => {
+        res.send(result);
+    }).catch((err) => {
+        console.log(err);
+        res.send("false");
+    })
+}

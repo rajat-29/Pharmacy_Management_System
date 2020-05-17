@@ -77,22 +77,23 @@
 
                         <tr class="addStockTableRow">
                             <td class="addStockTableHeading" scope="row">
-                                <input type="text" class="form-control" placeholder="Enter Medicine"><br>
+                                <input type="text" class="form-control" placeholder="Enter Medicine" list="medicines" id="medicines_name"><br>
+                                <datalist id="medicines"></datalist>
                             </td>
                             <td class="addStockTableHeading" scope="row">
-                                <input type="number" class="form-control" placeholder="Enter Quantity"><br>
+                                <input type="number" class="form-control" placeholder="Enter Quantity" id="quantity"><br>
                             </td>
                             <td class="addStockTableHeading" scope="row">
-                                <input type="number" class="form-control" placeholder="Enter Price"><br>
+                                <input type="number" class="form-control" placeholder="Enter Price" id="price"><br>
                             </td>
                             <td class="addStockTableHeading" scope="row">
-                                <input type="number" class="form-control" placeholder="Enter Discount"><br>
+                                <input type="number" class="form-control" placeholder="Enter Discount" id="discount"><br>
                             </td>
                             <td class="addStockTableHeading" scope="row">
-                                <input type="number" class="form-control" placeholder="Enter Tax"><br>
+                                <input type="number" class="form-control" placeholder="Enter Tax" id="taxes"><br>
                             </td>
                             <td class="addStockTableHeading" scope="row">
-                                <button type="submit" class="btn btn-success"><i class="fa fa-plus"
+                                <button type="submit" class="btn btn-success" onclick="addMedicineToArray()"><i class="fa fa-plus"
                                         style="margin-right: 10%;"></i>Add</button><br>
                             </td>
                         </tr>
