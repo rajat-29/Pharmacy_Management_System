@@ -19,5 +19,15 @@ exports.fetchMedicines = async (req,res) => {
     }).catch((err) => {
         console.log(err);
         res.send("false");
+    });
+}
+
+exports.addStockByVendor = async (req, res) => {
+    Medicine.find({}).then((result) => {
+        console.log(result);
+        res.render("addStockByVendor", {
+            medicines: result,
+            role: req.session.role
+        })
     })
 }
