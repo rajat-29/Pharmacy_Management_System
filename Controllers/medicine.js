@@ -10,3 +10,13 @@ exports.addMedicineType = async (req, res) => {
         res.send("false")
     })
 }
+
+exports.addStockByVendor = async (req, res) => {
+    Medicine.find({}).then((result) => {
+        console.log(result);
+        res.render("addStockByVendor", {
+            medicines: result,
+            role: req.session.role
+        })
+    })
+}

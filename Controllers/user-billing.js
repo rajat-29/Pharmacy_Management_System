@@ -8,7 +8,8 @@ exports.getProfileDetails = async (req, res) => {
         console.log(result)
         res.render("profile", {
             normal_details: result,
-            billing_details: result.billing_details
+            billing_details: result.billing_details,
+            role: req.session.role
         })
     }).catch((err) => {
         console.log(err)

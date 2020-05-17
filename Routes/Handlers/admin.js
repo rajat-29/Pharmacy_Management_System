@@ -14,16 +14,24 @@ var Controllers = require("../../Controllers");
 app.use(bodyParser.json());
 
 app.get("/dashboard", function (req, res) {
-    res.render("dashboard");
+    res.render("dashboard", {
+        role: req.session.role
+    });
 });
 
 app.get("/changepassword", function (req, res) {
-    res.render("changepassword");
+    res.render("changepassword", {
+        role: req.session.role
+    });
 });
 
 app.get("/addMed", function (req, res) {
-    res.render("addMed");
+    res.render("addMed", {
+        role: req.session.role
+    });
 });
+
+app.get("/addStockByVendor", Controllers.Medicine.addStockByVendor);
 
 app.get("/profile", Controllers.userbilling.getProfileDetails);
 
@@ -32,5 +40,7 @@ app.post("/updateprofile", Controllers.billing.updateprofile);
 app.post("/changepassword", Controllers.user.changepassword);
 
 app.post("/addMedicineType", Controllers.Medicine.addMedicineType);
+
+app.post("/addToCartFully", Controllers.stock.addToCartFully);
 
 module.exports = app;

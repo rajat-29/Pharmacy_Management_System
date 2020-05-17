@@ -39,19 +39,23 @@
                 </span>
             </li>
 
+            <% if( role == "Admin"){ %>
             <li tabIndex="0">
                 <span style="color: white" class="menu-links">
                     <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
                     Add Medicines
                 </span>
             </li>
+            <% } %>
 
+            <% if( role == "vendor"){ %>
             <li tabIndex="0">
                 <span style="color: white" class="menu-links">
                     <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
                     Add Stocks
                 </span>
             </li>
+            <% } %>
 
             <li tabIndex="0">
                 <span style="color: white" class="menu-links">
