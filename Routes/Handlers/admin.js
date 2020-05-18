@@ -49,4 +49,6 @@ app.get("/fetchMedicines", Controllers.Medicine.fetchMedicines);
 
 app.post("/addToCartFully", Controllers.stock.addToCartFully);
 
+app.post("/addBill", Controllers.billing.addBill);
+
 module.exports = app;

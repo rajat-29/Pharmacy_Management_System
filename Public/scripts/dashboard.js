@@ -4,6 +4,10 @@ price = document.getElementById('price');
 discount = document.getElementById('discount');
 tax = document.getElementById('taxes');
 
+doctorName = document.getElementById('doctorName');
+custname = document.getElementById('custname');
+contact = document.getElementById('contact');
+
 var medicineArray = [];
 var index = 0;
 var ans = 0;
@@ -292,6 +296,9 @@ function createFooter() {
     var button = document.createElement('button');
     button.setAttribute("class","btn btn-success");
     button.innerHTML = "Payment";
+    button.onclick = function() {
+        addMedicinesToDatabase();
+    }
 
     th3.appendChild(button);
     
@@ -305,6 +312,30 @@ function createFooter() {
 
 function deleteAllMedicines() {
     location.reload();
+}
+
+function addMedicinesToDatabase() {
+
+    if(custname.value == '' || doctorName.value == '' || contact.value == '') {
+        alert("Fields are Empty");
+        return;
+    }
+    
+    var obj = new Object();
+    obj.custname = custname.value;
+    obj.docname = doctorName.value;
+    obj.contact = contact.value;
+    obj.items = medicineArray;
+    obj.total = ans;
+
+    var xml = new XMLHttpRequest();
+    xml.open("POST", "/admin/addBill");
+    xml.setRequestHeader("Content-Type", "application/json");
+    xml.addEventListener('load', function () {
+        alert("Bill Ready");
+        location.reload();
+    })
+    xml.send(JSON.stringify(obj));
 }
 
 fetchMedicines();

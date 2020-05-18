@@ -17,3 +17,12 @@ module.exports.updateprofile = (req, res) => {
         res.send("false");
     })
 }
+
+module.exports.addBill = (req, res) => {
+    Billing.create(req.body,function(error,res) {
+        if(error)
+        throw error;
+        else{}
+    }) 
+    res.send("data saved");
+}
