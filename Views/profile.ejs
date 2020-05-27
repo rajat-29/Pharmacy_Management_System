@@ -36,9 +36,8 @@
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input type="number" class="form-control" name="phoneno"
-                                value="<%= billing_details.phoneno %>" id="phoneno" placeholder="phoneno" maxlength="10"
-                                required>
+                            <input type="number" class="form-control" name="phoneno" value="<%= userdetails.phoneno %>"
+                                id="phoneno" placeholder="phoneno" maxlength="10" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -50,23 +49,23 @@
                         <div class="form-group">
                             <label for="inputAddress">Address</label>
                             <input type="text" class="form-control" id="address" name="address"
-                                value="<%= billing_details.address %>" placeholder="Address required" required>
+                                value="<%= userdetails.address %>" placeholder="Address required" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label>state</label>
-                                <input type="text" class="form-control" id="state" value="<%= billing_details.state %>"
+                                <input type="text" class="form-control" id="state" value="<%= userdetails.state %>"
                                     name="city" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label>City</label>
-                                <input type="text" class="form-control" id="city" value="<%= billing_details.city %>"
+                                <input type="text" class="form-control" id="city" value="<%= userdetails.city %>"
                                     name="city" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputZip">Zip</label>
                                 <input type="text" name="zipcode" class="form-control"
-                                    value="<%= billing_details.zipcode %>" id="zipcode" required>
+                                    value="<%= userdetails.zipcode %>" id="zipcode" required>
                             </div>
                         </div>
                         <input class="btn btn-primary" type="button" value="Profile" onclick="updateDetails()" />

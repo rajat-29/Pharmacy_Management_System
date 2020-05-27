@@ -1,14 +1,14 @@
 var Users = require('../Models/UserSchema');
-var Billing = require('../Models/billingSchema');
+var Userdetails = require('../Models/userdetails');
 
 exports.getProfileDetails = async (req, res) => {
     return await Users.findOne({
         _id: req.session._id
-    }).populate("billing_details").then((result) => {
+    }).populate("userdetails").then((result) => {
         console.log(result)
         res.render("profile", {
             normal_details: result,
-            billing_details: result.billing_details,
+            userdetails: result.userdetails,
             role: req.session.role
         })
     }).catch((err) => {

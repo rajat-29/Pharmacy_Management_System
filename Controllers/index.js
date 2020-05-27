@@ -1,5 +1,5 @@
 var user = require("./user")
-var userbilling = require("./user-billing")
+var userdetails = require("./user-userdetails")
 var billing = require("./billing")
 var Medicine = require("./medicine")
 var stock = require("./stock")
@@ -7,7 +7,7 @@ var stock = require("./stock")
 module.exports = {
     user,
     billing,
-    userbilling,
+    userdetails,
     Medicine,
     stock
 }

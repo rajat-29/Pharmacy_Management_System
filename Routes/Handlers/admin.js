@@ -26,18 +26,14 @@ app.get("/changepassword", function (req, res) {
 });
 
 app.get("/addMedicine", function (req, res) {
-    res.render("addMedicine");
-});
-
-app.get("/addMed", function (req, res) {
-    res.render("addMed", {
+    res.render("addMedicine", {
         role: req.session.role
     });
 });
 
 app.get("/addStockByVendor", Controllers.Medicine.addStockByVendor);
 
-app.get("/profile", Controllers.userbilling.getProfileDetails);
+app.get("/profile", Controllers.userdetails.getProfileDetails);
 
 app.post("/updateprofile", Controllers.billing.updateprofile);
 

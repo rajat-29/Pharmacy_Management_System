@@ -28,7 +28,11 @@ var userSchema = new Schema({
     billing_details: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "billings"
-    }
+    },
+    userdetails: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "userdetails"
+    },
 })
 
 module.exports = mongoose.model('users', userSchema);
