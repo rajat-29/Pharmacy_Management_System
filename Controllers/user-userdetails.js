@@ -57,3 +57,45 @@ module.exports.vendorstablebyadmin = async function (req, res) {
         console.log(err)
     })
 }
+
+module.exports.shopkeeperstablebyadmin = async function (req, res) {
+    let query = {};
+    let params = {};
+
+    query["role"] = "Shopkeeper"
+
+    if (req.body.search.value) {
+        query["$or"] = [{
+            "name": {
+                '$regex': req.body.search.value,
+                '$options': 'i'
+            }
+        }]
+    }
+    let sortingType;
+    if (req.body.order[0].dir === 'asc')
+        sortingType = 1;
+    else
+        sortingType = -1;
+
+    Users.find(query, {}, params).populate('userdetails').then((data) => {
+        Users.countDocuments(query, function (err, filteredCount) {
+            if (err)
+                console.log(err);
+            else {
+                Users.countDocuments(function (err, totalCount) {
+                    if (err)
+                        console.log(err);
+                    else
+                        res.send({
+                            "recordsTotal": totalCount,
+                            "recordsFiltered": filteredCount,
+                            data
+                        });
+                })
+            }
+        });
+    }).catch((err) => {
+        console.log(err)
+    })
+}
