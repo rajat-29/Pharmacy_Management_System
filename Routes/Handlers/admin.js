@@ -33,6 +33,16 @@ app.get("/addMedicine", function (req, res) {
 
 app.get("/addStockByVendor", Controllers.Medicine.addStockByVendor);
 
+
+app.get("/vendorstable", function (req, res) {
+    res.render("vendorstable", {
+        title: "Vendor Tables",
+        role: req.session.role
+    });
+});
+
+app.post("/vendorstablebyadmin", Controllers.userdetails.vendorstablebyadmin);
+
 app.get("/profile", Controllers.userdetails.getProfileDetails);
 
 app.post("/updateprofile", Controllers.billing.updateprofile);

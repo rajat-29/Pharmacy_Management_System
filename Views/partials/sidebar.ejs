@@ -68,12 +68,27 @@
                 </span>
             </li>
 
+            <% if( role == "Admin"){ %>
             <li tabIndex="0">
-                <span style="color: white" class="menu-links">
-                    <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
-                    Vendors
-                </span>
+                <a href="/admin/vendorstable">
+                    <span style="color: white" class="menu-links">
+                        <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
+                        Vendors
+                    </span>
+                </a>
             </li>
+            <% } %>
+
+            <% if( role == "Admin"){ %>
+            <li tabIndex="0">
+                <a href="#">
+                    <span style="color: white" class="menu-links">
+                        <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
+                        Users ( Shopkeepers )
+                    </span>
+                </a>
+            </li>
+            <% } %>
 
             <li tabIndex="0">
                 <span style="color: white" class="menu-links">

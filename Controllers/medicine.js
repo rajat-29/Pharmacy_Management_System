@@ -11,10 +11,8 @@ exports.addMedicineType = async (req, res) => {
     })
 }
 
-exports.fetchMedicines = async (req,res) => {
-    Medicine.find({
-
-    }).then((result) => {
+exports.fetchMedicines = async (req, res) => {
+    Medicine.find({}).then((result) => {
         res.send(result);
     }).catch((err) => {
         console.log(err);
