@@ -47,6 +47,13 @@ app.get("/shopkeeperstable", function (req, res) {
     });
 });
 
+app.get("/manageMedicines", function (req, res) {
+    res.render("manageMedicines", {
+        title: "Manage Medicines",
+        role: req.session.role
+    });
+});
+
 app.post("/vendorstablebyadmin", Controllers.userdetails.vendorstablebyadmin);
 
 app.post("/shopkeeperstablebyadmin", Controllers.userdetails.shopkeeperstablebyadmin);
@@ -64,5 +71,9 @@ app.get("/fetchMedicines", Controllers.Medicine.fetchMedicines);
 app.post("/addToCartFully", Controllers.stock.addToCartFully);
 
 app.post("/addBill", Controllers.billing.addBill);
+
+app.post("/manageMedicines", Controllers.Medicine.manageMedicines);
+
+app.post("/deleteMed/:pro",Controllers.Medicine.deleteMed);
 
 module.exports = app;

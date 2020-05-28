@@ -1,12 +1,12 @@
 var table;
 
 $(document).ready(function () {
-    table = $('#shopekeepertable').DataTable({
+    table = $('#medicineTable').DataTable({
         "processing": true,
         "serverSide": true,
         "dataSrc": "",
         "ajax": {
-            "url": "/admin/shopkeeperstablebyadmin",
+            "url": "/admin/manageMedicines",
             "type": "POST",
         },
         "columns": [{
@@ -21,9 +21,26 @@ $(document).ready(function () {
 
             "render": function (data, type, row, meta) {
           
-              return '<center><span class="actionbut emailbut" id="emailbut" data-toggle="modal" data-target="#myModal"><i class="fas fa-envelope"></i></span><span class="actionbut editbut" id="editbut" data-toggle="modal" data-target="#updateModal"><i class="fas fa-edit"></i></span><span class="actionbut activatebut" id="activatebut" onclick=reactivateUser("'+row._id+'","'+row.name+'","'+row.flag+'")><i class="fa fa-check-circle"></i></span></center>'
+              return '<span class="actionbut activatebut" id="deleteMed" onclick=deleteMedicine("'+row._id+'")><i class="fa fa-trash"></i></span>'
 
             }
         }],
     });
 });
+
+function deleteMedicine(ides)
+{
+    $(document).on("click", "#deleteMed", function() {
+
+    var filename = '/admin/deleteMed/' + ides
+    var request = new XMLHttpRequest();
+    request.open('POST',filename);
+    request.send()
+    request.addEventListener("load",function(event){
+        alert("Medi Deleted")
+        table.ajax.reload(null, false);
+            
+    });  
+ 
+    })
+}
