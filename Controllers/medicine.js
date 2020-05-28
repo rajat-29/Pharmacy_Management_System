@@ -1,3 +1,4 @@
+/* Models */
 var Medicine = require("../Models/medSchema")
 
 exports.addMedicineType = async (req, res) => {
@@ -20,10 +21,9 @@ exports.fetchMedicines = async (req, res) => {
     });
 }
 
-exports.addStockByVendor = async (req, res) => {
+exports.addStock = async (req, res) => {
     Medicine.find({}).then((result) => {
-        console.log(result);
-        res.render("addStockByVendor", {
+        res.render("addStock", {
             medicines: result,
             role: req.session.role
         })
@@ -74,10 +74,12 @@ exports.manageMedicines = async function (req, res) {
 exports.deleteMed = async function (req, res) {
     var id = req.params.pro.toString();
 
-    Medicine.deleteOne({ "_id": id }).then((result) => {
-        res.send(result);
+    Medicine.deleteOne({
+        "_id": id
+    }).then((result) => {
+        res.send("true");
     }).catch((err) => {
         console.log(err);
         res.send("false");
     });
-  }
+}

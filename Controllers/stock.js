@@ -1,14 +1,13 @@
 var Stock = require("../Models/stockSchema")
 var Medicine = require("../Models/medSchema")
 
-exports.addToCartFully = async (req, res) => {
+exports.addStock = async (req, res) => {
     Stock.create({
         user: req.session._id,
         price: req.body.price,
         no_of_stock: req.body.stock,
         medicineType: req.body_id
     }).then((result) => {
-        console.log(result);
         res.send("true");
     }).catch((err) => {
         console.log(err);
@@ -49,5 +48,4 @@ exports.stockdetails = async (req, res) => {
             stock_details: result
         })
     })
-
 }

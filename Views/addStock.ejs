@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Stock</title>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
     <link href="/css/partial.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
-    <script src="/scripts/addStockByVendor-js.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -20,12 +23,12 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-8" style="border: 5px solid rgba(0,0,0,0.1);margin-top: 40px;">
                 <center>
-                    <h1 class="heading" style="color: black;">Add Medicine</h1>
+                    <h1 class="heading" style="color: black;"><u>Add Stock</u></h1>
                 </center>
                 <div>
                     <form>
                         <div class="form-group">
-                            <label>Name Of Medicines:</label>
+                            <label>*Name Of Medicines:</label>
                             <select class="form-control" id="medicines" required>
                                 <% for(var i=0; i < medicines.length; i++) { %>
                                 <option value="<%= medicines[i]._id %>"><%= medicines[i].name %></option>
@@ -33,12 +36,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>No Of Stock</label>
+                            <label>*No Of Stock</label>
                             <input type="number" class="form-control" name="stock" id="stock"
                                 placeholder="Stock of Medicine" required>
                         </div>
                         <div class="form-group">
-                            <label>No Of Stock</label>
+                            <label>*Price ( In Rupees )</label>
                             <input type="number" class="form-control" name="price" id="price"
                                 placeholder="Price of Medicine" required>
                         </div>
@@ -47,8 +50,7 @@
                 </div>
             </div>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="/scripts/addStock-js.js"></script>
 </body>
 
 </html>

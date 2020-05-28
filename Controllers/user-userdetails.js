@@ -17,7 +17,7 @@ exports.getProfileDetails = async (req, res) => {
     })
 }
 
-module.exports.vendorstablebyadmin = async function (req, res) {
+module.exports.vendorstable = async function (req, res) {
     let query = {};
     let params = {};
 
@@ -59,7 +59,7 @@ module.exports.vendorstablebyadmin = async function (req, res) {
     })
 }
 
-module.exports.shopkeeperstablebyadmin = async function (req, res) {
+module.exports.shopkeeperstable = async function (req, res) {
     let query = {};
     let params = {};
 

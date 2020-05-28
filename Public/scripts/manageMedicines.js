@@ -18,29 +18,29 @@ $(document).ready(function () {
         ],
         "columnDefs": [{
             "targets": -1,
-
             "render": function (data, type, row, meta) {
-          
-              return '<span class="actionbut activatebut" id="deleteMed" onclick=deleteMedicine("'+row._id+'")><i class="fa fa-trash"></i></span>'
+
+                return '<span id="deleteMed" onclick=deleteMedicine("' + row._id + '")><i class="fa fa-trash"></i></span>'
 
             }
         }],
     });
 });
 
-function deleteMedicine(ides)
-{
-    $(document).on("click", "#deleteMed", function() {
+function deleteMedicine(ides) {
+    $(document).on("click", "#deleteMed", function () {
 
-    var filename = '/admin/deleteMed/' + ides
-    var request = new XMLHttpRequest();
-    request.open('POST',filename);
-    request.send()
-    request.addEventListener("load",function(event){
-        alert("Medi Deleted")
-        table.ajax.reload(null, false);
-            
-    });  
- 
+        var filename = '/admin/deleteMed/' + ides
+        var request = new XMLHttpRequest();
+        request.open('POST', filename);
+        request.send()
+        request.addEventListener("load", function (event) {
+            var res = request.responseText;
+            if (res === "True")
+                alert("Medicine Deleted")
+            else
+                alert("Medicine Filed To Delete")
+            table.ajax.reload(null, false);
+        });
     })
 }

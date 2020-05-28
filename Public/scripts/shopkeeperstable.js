@@ -6,7 +6,7 @@ $(document).ready(function () {
         "serverSide": true,
         "dataSrc": "",
         "ajax": {
-            "url": "/admin/shopkeeperstablebyadmin",
+            "url": "/admin/shopkeeperstable",
             "type": "POST",
         },
         "columns": [{
@@ -29,9 +29,6 @@ $(document).ready(function () {
             },
             {
                 "data": "userdetails.city"
-            },
-            {
-                "data": "userdetails.country"
             },
             {
                 "data": "userdetails.zipcode"

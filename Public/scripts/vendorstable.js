@@ -6,7 +6,7 @@
          "serverSide": true,
          "dataSrc": "",
          "ajax": {
-             "url": "/admin/vendorstablebyadmin",
+             "url": "/admin/vendorstable",
              "type": "POST",
          },
          "columns": [{
@@ -29,9 +29,6 @@
              },
              {
                  "data": "userdetails.city"
-             },
-             {
-                 "data": "userdetails.country"
              },
              {
                  "data": "userdetails.zipcode"

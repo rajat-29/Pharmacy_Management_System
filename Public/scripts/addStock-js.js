@@ -14,7 +14,7 @@ function addStock() {
     obj.price = price;
 
     var xml = new XMLHttpRequest();
-    xml.open("post", "/admin/addToCartFully");
+    xml.open("post", "/vendor/addStock");
     xml.setRequestHeader("Content-Type", "application/json");
     xml.addEventListener('load', function () {
         var res = xml.responseText;;
