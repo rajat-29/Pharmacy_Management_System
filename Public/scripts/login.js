@@ -10,7 +10,7 @@ submit_btn.addEventListener("click", function () {
     }
 
     var request = new XMLHttpRequest();
-    request.open('POST', "/login/checkLogin");
+    request.open('POST', "/user/checkLogin");
     request.setRequestHeader("Content-Type", "application/json");
     request.send(JSON.stringify({
         email: user_email.value,

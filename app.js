@@ -10,6 +10,7 @@ var mongoose = require("mongoose")
 var http = require("http").Server(app);
 var port = process.env.PORT || 3000;
 
+/* ENV */
 require("dotenv").config();
 
 /* DB */
@@ -31,7 +32,6 @@ app.use(
     })
 );
 
-
 app.use(express.static(path.join(__dirname, "/Public")));
 app.use(bodyParser.json());
 app.use(
@@ -44,8 +44,10 @@ app.engine("ejs", engine);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "Views"));
 
+/* Routes */
 app.use('/', require('./Routes/'));
 
+/* Login Page */
 app.get("/", function (req, res) {
     res.render("login");
 });

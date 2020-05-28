@@ -4,8 +4,10 @@ function updateDetails() {
     obj.phoneno = document.getElementById("phoneno").value;
     obj.state = document.getElementById("state").value;
     obj.city = document.getElementById("city").value;
+    obj.zipcode = document.getElementById("zipcode").value;
+
     var xml = new XMLHttpRequest();
-    xml.open("POST", "/admin/updateprofile");
+    xml.open("POST", "/user/updateprofile");
     xml.setRequestHeader("Content-Type", "application/json");
     xml.addEventListener('load', function () {
         var res = xml.responseText;;

@@ -5,7 +5,7 @@ function changepassword() {
         alert("Enter All field");
     } else {
         var xml = new XMLHttpRequest();
-        xml.open("POST", "/admin/changepassword");
+        xml.open("POST", "/user/changepassword");
         xml.setRequestHeader("Content-Type", "application/json");
         xml.addEventListener('load', function () {
             var res = xml.responseText;;
@@ -24,5 +24,4 @@ function changepassword() {
             "newpass": newpass
         }));
     }
-
 }

@@ -1,11 +1,11 @@
+/* Models */
 var Users = require('../Models/UserSchema');
 var Userdetails = require('../Models/userdetails');
 
 exports.getProfileDetails = async (req, res) => {
-    return await Users.findOne({
+    await Users.findOne({
         _id: req.session._id
     }).populate("userdetails").then((result) => {
-        console.log(result)
         res.render("profile", {
             normal_details: result,
             userdetails: result.userdetails,
@@ -13,6 +13,7 @@ exports.getProfileDetails = async (req, res) => {
         })
     }).catch((err) => {
         console.log(err)
+        res.redirect("/")
     })
 }
 
@@ -97,5 +98,24 @@ module.exports.shopkeeperstablebyadmin = async function (req, res) {
         });
     }).catch((err) => {
         console.log(err)
+    })
+}
+
+module.exports.updateprofile = (req, res) => {
+    Userdetails.findOneAndUpdate({
+        "user": req.session._id
+    }, {
+        "$set": req.body
+    }).then((
+        result
+    ) => {
+        console.log(result)
+        if (result != null)
+            res.send("true")
+        else
+            res.send("false")
+    }).catch((err) => {
+        console.log(err)
+        res.send("false");
     })
 }

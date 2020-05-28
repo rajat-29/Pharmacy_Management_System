@@ -1,5 +1,8 @@
 var bcrypt = require("bcrypt")
+
+/* Models */
 var Users = require('../Models/UserSchema');
+
 var saltRounds = 10;
 
 exports.checkLogin = (req, res) => {
@@ -35,6 +38,10 @@ exports.checkLogin = (req, res) => {
 }
 
 exports.changepassword = (req, res) => {
+
+    if (!(req.body.oldpass && req.body.newpass))
+        res.send("false")
+
     Users.findOne({
         "_id": req.session._id
     }).select("+password").then((result) => {

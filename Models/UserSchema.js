@@ -27,11 +27,13 @@ var userSchema = new Schema({
     },
     billing_details: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "billings"
+        ref: "billings",
+        required: true
     },
     userdetails: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "userdetails"
+        ref: "userdetails",
+        required: true
     },
 })
 
