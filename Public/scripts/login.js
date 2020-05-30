@@ -19,7 +19,7 @@ submit_btn.addEventListener("click", function () {
     request.addEventListener("load", function () {
         var data = request.responseText;
         if (data === 'true') {
-            window.location = '/admin/dashboard';
+            window.location = '/user/dashboard';
         } else if (data === 'false') {
             alert("Id or Password is not Correct");
         }

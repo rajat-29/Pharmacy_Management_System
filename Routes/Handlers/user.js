@@ -23,7 +23,7 @@ app.get("/logutUser", function (req, res) {
 app.get("/changepassword", Middleware.checkSession,
     function (req, res) {
         res.render("changepassword", {
-            role: req.session.role
+            user_details: req.session
         });
     });
 

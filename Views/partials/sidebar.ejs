@@ -24,7 +24,7 @@
 
         <ul>
             <li tabIndex="0">
-                <a href="/admin/dashboard">
+                <a href="/user/dashboard">
                     <span style="color: white" class="menu-links">
                         <i class="fas fa-tachometer-alt fa-2x" style="color: white;margin-right: 20px;"></i>
                         Dashboard
@@ -39,7 +39,7 @@
                 </span>
             </li>
 
-            <% if( role == "Admin"){ %>
+            <% if( user_details.role == "Admin"){ %>
             <li tabIndex="0">
                 <a href="/admin/addMedicine">
                     <span style="color: white" class="menu-links">
@@ -50,7 +50,7 @@
             </li>
             <% } %>
 
-            <% if( role == "Vendor"){ %>
+            <% if( user_details.role == "Vendor"){ %>
             <li tabIndex="0">
                 <a href="/vendor/addStock">
                     <span style="color: white" class="menu-links">
@@ -70,7 +70,7 @@
                 </a>
             </li>
 
-            <% if( role == "Admin"){ %>
+            <% if( user_details.role == "Admin"){ %>
             <li tabIndex="0">
                 <a href="/admin/vendorstable">
                     <span style="color: white" class="menu-links">
@@ -81,7 +81,7 @@
             </li>
             <% } %>
 
-            <% if( role == "Admin"){ %>
+            <% if( user_details.role == "Admin"){ %>
             <li tabIndex="0">
                 <a href="/admin/shopkeeperstable">
                     <span style="color: white" class="menu-links">

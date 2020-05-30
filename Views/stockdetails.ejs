@@ -24,14 +24,22 @@
                         <%- stock_details.user.name %></h1>
                 </center>
                 <div>
-
+                    <h2>Name: <%- stock_details.medicineType.name %></h2>
+                    <h2>Seller Name: <%- stock_details.user.name %></h2>
+                    <h2>No of Stock: <%- stock_details.no_of_stock %></h2>
+                    <h2>Price: <%- stock_details.price %></h2>
+                    <div>
+                        <input type="number" id="no_of_stock" max="<%- stock_details.no_of_stock %>" min="0" value="1">
+                        <button class="btn btn-primary" id="buy"
+                            onclick="buyfunc('<%- stock_details._id %>','<%- stock_details.no_of_stock %>')">Buy</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <!-- <script src="/scripts/buystock-js.js"></script> -->
+    <script src="/scripts/stockdetails-js.js"></script>
 </body>
 
 </html>

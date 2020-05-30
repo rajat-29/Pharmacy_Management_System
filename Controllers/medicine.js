@@ -25,7 +25,7 @@ exports.addStock = async (req, res) => {
     Medicine.find({}).then((result) => {
         res.render("addStock", {
             medicines: result,
-            role: req.session.role
+            user_details: req.session
         })
     })
 }

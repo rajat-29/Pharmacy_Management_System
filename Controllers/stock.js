@@ -44,7 +44,7 @@ exports.stockdetails = async (req, res) => {
     }).populate("medicineType").populate("user").then((result) => {
         console.log(result)
         res.render("stockdetails", {
-            role: req.session.role,
+            user_details: req.session,
             stock_details: result
         })
     })

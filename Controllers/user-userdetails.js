@@ -9,7 +9,7 @@ exports.getProfileDetails = async (req, res) => {
         res.render("profile", {
             normal_details: result,
             userdetails: result.userdetails,
-            role: req.session.role
+            user_details: req.session
         })
     }).catch((err) => {
         console.log(err)

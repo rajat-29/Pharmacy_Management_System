@@ -9,24 +9,18 @@ var Controllers = require("../../Controllers");
 /* Middleware */
 var Middleware = require("../../middlewares/middleware");
 
-app.get("/dashboard", function (req, res) {
-    res.render("dashboard", {
-        role: req.session.role
-    });
-});
-
 /* Add Medicine Page */
 app.get("/addMedicine", Middleware.checkSession, Middleware.checkAdmin,
     function (req, res) {
         res.render("addMedicine", {
-            role: req.session.role
+            user_details: req.session
         });
     });
 
 /* Manage Medicine Page */
 app.get("/manageMedicines", Middleware.checkSession, Middleware.checkAdmin, function (req, res) {
     res.render("manageMedicines", {
-        role: req.session.role
+        user_details: req.session
     });
 });
 
@@ -39,7 +33,7 @@ app.post("/deleteMed/:pro", Middleware.checkSession, Middleware.checkAdmin, Cont
 /* Manage Vendors */
 app.get("/vendorstable", Middleware.checkSession, Middleware.checkAdmin, function (req, res) {
     res.render("vendorstable", {
-        role: req.session.role
+        user_details: req.session
     });
 });
 
@@ -49,7 +43,7 @@ app.post("/vendorstable", Middleware.checkSession, Middleware.checkAdmin, Contro
 /* Manage Shopkeepers */
 app.get("/shopkeeperstable", Middleware.checkSession, Middleware.checkAdmin, function (req, res) {
     res.render("shopkeeperstable", {
-        role: req.session.role
+        user_details: req.session
     });
 });
 
@@ -59,7 +53,7 @@ app.post("/shopkeeperstable", Middleware.checkSession, Middleware.checkAdmin, Co
 app.get("/buystock", function (req, res) {
     res.render("buystock", {
         title: "Vendor Tables",
-        role: req.session.role
+        user_details: req.session
     });
 });
 

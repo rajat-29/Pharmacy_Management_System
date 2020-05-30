@@ -52,6 +52,18 @@ app.get("/", function (req, res) {
     res.render("login");
 });
 
+app.get("/user/dashboard", function (req, res) {
+    if (req.session.role === "Shopkeeper")
+        res.render("dashboard", {
+            user_details: req.session
+        });
+    else if (req.session.role === "Vendor") {
+        res.redirect("/vendor/addStock")
+    } else if (req.session.role === "Admin") {
+        res.redirect("/admin/addMedicine")
+    }
+});
+
 http.listen(port, () => {
     console.log("Running on port " + port);
 });
