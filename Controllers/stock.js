@@ -6,7 +6,7 @@ exports.addStock = async (req, res) => {
         user: req.session._id,
         price: req.body.price,
         no_of_stock: req.body.stock,
-        medicineType: req.body_id
+        medicineType: req.body._id
     }).then((result) => {
         res.send("true");
     }).catch((err) => {

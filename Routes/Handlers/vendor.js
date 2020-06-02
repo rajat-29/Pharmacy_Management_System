@@ -13,6 +13,6 @@ app.get("/addStock", Middleware.checkSession, Middleware.checkVendor, Controller
 
 app.post("/addStock", Middleware.checkSession, Middleware.checkVendor, Controllers.stock.addStock);
 
-app.post("/buy/:id", Middleware.checkSession, Middleware.checkVendor, Controllers.stockshopitems.buy);
+app.post("/buy/:id", Middleware.checkSession, Controllers.stockshopitems.buy);
 
 module.exports = app;
