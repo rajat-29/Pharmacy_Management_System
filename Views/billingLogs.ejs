@@ -10,7 +10,6 @@
     <link type="text/css" href="/css/datatables.min.css">
     <link href="/css/partial.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
     </script>
@@ -34,6 +33,9 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Name</th>
+                                <th>Name</th>
+                                <th>Name</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -43,6 +45,21 @@
             </div>
         </div>
     </div>
+
+    <table class="table table-bordered" id="resultTable" hidden>
+        <thead>
+            <tr>
+                <th>Medi Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Discunt</th>
+                <th>Tax </th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="listing">
+        </tbody>
+    </table>
 
     <script type="text/javascript" src="/scripts/billingLogs.js"></script>
 </body>
