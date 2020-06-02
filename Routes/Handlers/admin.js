@@ -57,6 +57,13 @@ app.get("/buystock", function (req, res) {
     });
 });
 
+app.get("/billingLogs", function (req, res) {
+    res.render("billingLogs", {
+        title: "Billing Logs",
+        user_details: req.session
+    });
+});
+
 app.post("/searchstock", Controllers.stock.searchstock);
 
 app.get("/stock/:id", Controllers.stock.stockdetails);
