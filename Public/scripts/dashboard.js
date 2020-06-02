@@ -21,7 +21,7 @@ function fetchMedicines() {
         medicineData = JSON.parse(request.responseText);
         var options = '';
         for(i in medicineData) {
-            options += '<option value="'+medicineData[i].name+'" />';
+            options += '<option value="'+medicineData[i].medicineType.name+'" />';
         }
         document.getElementById('medicines').innerHTML = options;
     }

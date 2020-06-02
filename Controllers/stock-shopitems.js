@@ -46,3 +46,13 @@ exports.buy = async (req, res) => {
         res.send("false")
     })
 }
+
+exports.fetchMedicines = async (req, res) => {
+    Shopitems.find({}).populate("medicineType").then((result) => {
+        console.log(result)
+        res.send(result);
+    }).catch((err) => {
+        console.log(err);
+        res.send("false");
+    });
+}

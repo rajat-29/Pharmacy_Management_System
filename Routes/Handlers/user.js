@@ -19,6 +19,7 @@ app.get("/logutUser", function (req, res) {
     res.render("login");
 });
 
+
 /* Change Password */
 app.get("/changepassword", Middleware.checkSession,
     function (req, res) {

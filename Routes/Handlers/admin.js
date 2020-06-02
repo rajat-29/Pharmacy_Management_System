@@ -61,7 +61,7 @@ app.post("/searchstock", Controllers.stock.searchstock);
 
 app.get("/stock/:id", Controllers.stock.stockdetails);
 
-app.get("/fetchMedicines", Controllers.Medicine.fetchMedicines);
+app.get("/fetchMedicines", Controllers.stockshopitems.fetchMedicines);
 
 app.post("/addBill", Controllers.billing.addBill);
 
