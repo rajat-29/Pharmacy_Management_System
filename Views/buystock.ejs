@@ -1,14 +1,19 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy Stock</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
     <link href="/css/partial.css" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- SCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -20,30 +25,28 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-8" style="border: 5px solid rgba(0,0,0,0.1);margin-top: 40px;">
                 <center>
-                    <h1 class="heading" style="color: black;">Buy Medicine Stock</h1>
+                    <h1 class="heading" style="color: black;"><u>Buy Medicine Stock</u></h1>
                 </center>
                 <div>
-                    <div class="form-row m-5">
+                    <div class="row m-5">
                         <div class="form-group col-md-8">
                             <input class="form-control" type="text" name="searchinput" id="searchinput">
                         </div>
                         <div class="form-group col-md-4">
-                            <button class="form-control" onclick="searchfunction()">Search</button>
+                            <button class="form-control btn btn-primary m-5" onclick="searchdata()">Search</button>
                         </div>
                     </div>
                     <div id="maindata">
 
                     </div>
                     <div class="d-flex justify-content-between">
-                        <i class="btn fa fa-arrow-left" onclick="increaseleft()" id="pullleft"></i>
-                        <i class="btn fa fa-arrow-right pull-right" onclick="increaseright()" id="pullright"></i>
+                        <i class="btn fa fa-arrow-left fa-2x" onclick="increaseleft()" id="pullleft"></i>
+                        <i class="btn fa fa-arrow-right pull-right fa-2x" onclick="increaseright()" id="pullright"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="/scripts/buystock-js.js"></script>
 </body>
 

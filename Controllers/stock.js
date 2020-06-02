@@ -30,7 +30,8 @@ exports.searchstock = async (req, res) => {
         Stock.find({
             "medicineType": {
                 $in: ty
-            }
+            },
+            isActive: true
         }).populate("medicineType").populate("user").skip(req.body.start).limit(req.body.end).then((result_stock) => {
             res.send(result_stock)
         })

@@ -24,15 +24,18 @@ exports.buy = async (req, res) => {
                     no_of_stock: result1.no_of_stock
                 }
             }).then((result2) => {
-                if (result2.price === 0)
-                    Stock.findOneAndUpdate({
-                        _id: result._id
+                if ((result2.no_of_stock - req.body.no_of_stock) == 0) {
+                    Stock.updateOne({
+                        _id: result2._id
                     }, {
                         $set: {
-                            "isActive": false
+                            isActive: false
                         }
+                    }).then((result3) => {
+                        res.send("experied");
                     })
-                res.send("true");
+                } else
+                    res.send("true");
             }).catch((err) => {
                 console.log(err)
                 res.send("false")

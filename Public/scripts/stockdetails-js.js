@@ -2,7 +2,7 @@ function buyfunc(ides, max) {
     max = parseInt(max)
     var no_of_stock = parseInt(document.getElementById("no_of_stock").value);
 
-    if (!(no_of_stock > 0 && no_of_stock < max)) {
+    if (!(no_of_stock > 0 && no_of_stock <= max)) {
         alert('Number of stock should be greater than 0 and less than ' + max);
         return;
     } else {
@@ -13,9 +13,11 @@ function buyfunc(ides, max) {
         request.addEventListener("load", function (event) {
             var res = request.responseText;
             console.log(res)
-            if (res === "true")
+            if (res === "true" || res == "experied") {
                 alert("Stock Added to Your Cart")
-            else
+                if (res == "experied")
+                    window.location = '/admin/buystock'
+            } else
                 alert("Stock Failed Added to Your Cart")
             window.location.reload()
         });
