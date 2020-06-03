@@ -84,4 +84,7 @@ app.post("/manageMedicines", Controllers.Medicine.manageMedicines);
 app.post("/manageBills", Controllers.billing.manageBills);
 
 app.post("/totalMedicines", Controllers.billing.totalMedicines);
+
+app.post("/recentOrders", Controllers.billing.recentOrders);
+
 module.exports = app;
