@@ -42,6 +42,17 @@
             </li>
 
             <% if( user_details.role == "Admin"){ %>
+                <li tabIndex="0">
+                    <a href="/admin/recentOrders">
+                        <span style="color: white" class="menu-links">
+                            <i class="fa fa-shopping-cart fa-2x" style="color: white;margin-right: 20px;"></i>
+                           Recent Orders
+                        </span>
+                    </a>
+                </li>
+                <% } %>
+
+            <% if( user_details.role == "Admin"){ %>
             <li tabIndex="0">
                 <a href="/admin/addMedicine">
                     <span style="color: white" class="menu-links">
@@ -105,12 +116,6 @@
             </li>
             <% } %>
 
-            <li tabIndex="0">
-                <span style="color: white" class="menu-links">
-                    <i class="fas fa-chart-pie fa-2x" style="color: white;margin-right: 20px;"></i>
-                    Reorder
-                </span>
-            </li>
 
         </ul>
     </nav>

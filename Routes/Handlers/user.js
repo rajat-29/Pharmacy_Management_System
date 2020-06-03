@@ -44,4 +44,6 @@ app.get("/profile", Middleware.checkSession, Controllers.userdetails.getProfileD
 /* Update Profile */
 app.post("/updateprofile", Middleware.checkSession, Controllers.userdetails.updateprofile);
 
+app.post("/placedOrder", Controllers.user.placedOrder);
+
 module.exports = app;

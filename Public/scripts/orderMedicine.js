@@ -197,4 +197,28 @@ function deleteAllMedicines() {
     location.reload();
 }
 
+function addMedicinesToDatabase() {
+
+    if(custname.value == '' || doctorName.value == '' || contact.value == '' || address.value == '') {
+        alert("Fields are Empty");
+        return;
+    }
+    
+    var obj = new Object();
+    obj.custname = custname.value;
+    obj.docname = doctorName.value;
+    obj.contact = contact.value;
+    obj.address = address.value;
+    obj.items = medicineArray;
+
+    var xml = new XMLHttpRequest();
+    xml.open("POST", "/user/placedOrder");
+    xml.setRequestHeader("Content-Type", "application/json");
+    xml.addEventListener('load', function () {
+        alert("Order Placed");
+        location.reload();
+    })
+    xml.send(JSON.stringify(obj));
+}
+
 fetchMedicines();

@@ -2,6 +2,7 @@ var bcrypt = require("bcrypt")
 
 /* Models */
 var Users = require('../Models/UserSchema');
+var placedOrder = require('../Models/placedOrder');
 
 var saltRounds = 10;
 
@@ -79,4 +80,13 @@ exports.changepassword = (req, res) => {
         console.log(err)
         res.send("false");
     });
+}
+
+module.exports.placedOrder = (req, res) => {
+    placedOrder.create(req.body, function (error, res) {
+        if (error)
+            throw error;
+        else {}
+    })
+    res.send("data saved");
 }
