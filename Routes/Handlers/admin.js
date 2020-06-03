@@ -64,6 +64,13 @@ app.get("/billingLogs", function (req, res) {
     });
 });
 
+app.get("/recentOrders", function (req, res) {
+    res.render("recentOrders", {
+        title: "Recent Orders",
+        user_details: req.session
+    });
+});
+
 app.post("/searchstock", Controllers.stock.searchstock);
 
 app.get("/stock/:id", Controllers.stock.stockdetails);
