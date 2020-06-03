@@ -28,6 +28,13 @@ app.get("/changepassword", Middleware.checkSession,
         });
     });
 
+app.get("/orderMedicines",
+    function (req, res) {
+        res.render("orderMedicines", {
+            user_details: req.session
+        });
+});
+
 /* Change Password */
 app.post("/changepassword", Middleware.checkSession, Controllers.user.changepassword);
 

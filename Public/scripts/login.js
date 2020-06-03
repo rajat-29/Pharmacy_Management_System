@@ -1,6 +1,7 @@
 var user_email = document.getElementById('user_email');
 var user_password = document.getElementById('user_password');
 var submit_btn = document.getElementById('submit_btn');
+var order_btn = document.getElementById('order_btn');
 
 submit_btn.addEventListener("click", function () {
 
@@ -24,4 +25,8 @@ submit_btn.addEventListener("click", function () {
             alert("Id or Password is not Correct");
         }
     });
+})
+
+order_btn.addEventListener("click", function() {
+    window.location = '/user/orderMedicines';
 })

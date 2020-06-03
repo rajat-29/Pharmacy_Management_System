@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="/css/partial.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div id="viewscreen">
+        <div class="container">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" style="border: 5px solid rgba(0,0,0,0.1);margin-top: 40px;">
+                <center>
+                    <h1 class="heading" style="color: black;">Place Order</h1>
+                </center>
+                <table class="addStockBoxTable table table-striped">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Doctor Name</span>
+                            </th>
+                            <th class="addStockTableHeading">
+                                <span class="addStockHeadingText" scope="col">Customer Name</span>
+                            </th>
+                            <th class="addStockTableHeading">
+                                <span class="addStockHeadingText" scope="col">Customer Contact</span>
+                            </th>
+                            <th class="addStockTableHeading">
+                                <span class="addStockHeadingText" scope="col">Customer Address</span>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="addStockTableRow">
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Doctor Name" id="doctorName"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Customer Name" id="custname"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Customer Contact" id="contact"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Customer Address" id="address"><br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="addStockBoxTable table table-striped">
+                    <thead class="thead-light">
+                        <tr class="addStockTableRow">
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Medicine</span>
+                            </th>
+                            <th class="addStockTableHeading" scope="col">
+                                <span class="addStockHeadingText">Quantity</span>
+                            </th>
+                            <th class="addStockTableHeading">
+                                <span class="addStockHeadingText">Action</span>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr class="addStockTableRow">
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="text" class="form-control" placeholder="Enter Medicine" list="medicines" id="medicines_name"><br>
+                                <datalist id="medicines"></datalist>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <input type="number" class="form-control" placeholder="Enter Quantity" id="quantity"><br>
+                            </td>
+                            <td class="addStockTableHeading" scope="row">
+                                <button type="submit" class="btn btn-success" onclick="addMedicineToArray()"><i class="fa fa-plus"
+                                        style="margin-right: 10%;"></i>Add</button><br>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit" class="btn btn-danger" onclick="deleteAllMedicines()"><i class="fa fa-trash"
+                        style="margin-right: 10%;"></i>Delete</button>
+                <br><br>
+
+                <table class="addStockBoxTable table table-striped" id="totalItemsTable">
+                    <tbody id="itemBodies">
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    
+<script src="/scripts/dashboard.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
