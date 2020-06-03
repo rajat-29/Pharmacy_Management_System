@@ -99,3 +99,11 @@ exports.recentOrders = async function (req, res) {
         console.log(err)
     })
 }
+
+exports.orderedMedicines = async (req, res) => {
+    //console.log(req.body)
+    placedOrder.find({"_id" : req.body.ides}).then((result) => {
+        console.log(result)
+        res.send(result)
+    })
+}
