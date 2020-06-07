@@ -1,43 +1,44 @@
+/* Models */
 var Billing = require("../Models/billingSchema")
-var placedOrder = require("../Models/placedOrder")
+var PlacedOrder = require("../Models/placedOrder")
 
-module.exports.addBill = (req, res) => {
-    Billing.create(req.body, function (error, res) {
-        if (error)
-            throw error;
-        else {}
+module.exports.addBill = async (req, res) => {
+    Billing.create(req.body).then((res) => {
+        res.send("200");
+    }).catch((err) => {
+        console.log(err)
+        res.send("404");
     })
-    res.send("data saved");
 }
 
-exports.manageBills = async function (req, res) {
-    console.log("d")
+exports.manageBills = async (req, res) => {
     let query = {};
     let params = {};
 
     if (req.body.search.value) {
         query["$or"] = [{
-            "name": {
+            "custname": {
+                '$regex': req.body.search.value,
+                '$options': 'i'
+            },
+            "docname": {
                 '$regex': req.body.search.value,
                 '$options': 'i'
             }
         }]
     }
-    let sortingType;
-    if (req.body.order[0].dir === 'asc')
-        sortingType = 1;
-    else
-        sortingType = -1;
 
-        Billing.find(query, {}, params).then((data) => {
-            Billing.countDocuments(query, function (err, filteredCount) {
-            if (err)
+    Billing.find(query, {}, params).then((data) => {
+        Billing.countDocuments(query, function (err, filteredCount) {
+            if (err) {
                 console.log(err);
-            else {
+                throw err;
+            } else {
                 Billing.countDocuments(function (err, totalCount) {
-                    if (err)
+                    if (err) {
                         console.log(err);
-                    else
+                        throw err;
+                    } else
                         res.send({
                             "recordsTotal": totalCount,
                             "recordsFiltered": filteredCount,
@@ -52,15 +53,17 @@ exports.manageBills = async function (req, res) {
 }
 
 exports.totalMedicines = async (req, res) => {
-    //console.log(req.body)
-    Billing.find({"_id" : req.body.ides}).then((result) => {
-        console.log(result)
+    Billing.find({
+        "_id": req.body.ides
+    }).then((result) => {
         res.send(result)
+    }).catch((err) => {
+        console.log(err)
+        throw err;
     })
 }
 
-exports.recentOrders = async function (req, res) {
-    
+exports.recentOrders = async (req, res) => {
     let query = {};
     let params = {};
 
@@ -72,21 +75,18 @@ exports.recentOrders = async function (req, res) {
             }
         }]
     }
-    let sortingType;
-    if (req.body.order[0].dir === 'asc')
-        sortingType = 1;
-    else
-        sortingType = -1;
 
-        placedOrder.find(query, {}, params).then((data) => {
-            placedOrder.countDocuments(query, function (err, filteredCount) {
-            if (err)
+    PlacedOrder.find(query, {}, params).then((data) => {
+        PlacedOrder.countDocuments(query, function (err, filteredCount) {
+            if (err) {
                 console.log(err);
-            else {
-                placedOrder.countDocuments(function (err, totalCount) {
-                    if (err)
+                throw err;
+            } else {
+                PlacedOrder.countDocuments(function (err, totalCount) {
+                    if (err) {
                         console.log(err);
-                    else
+                        throw err;
+                    } else
                         res.send({
                             "recordsTotal": totalCount,
                             "recordsFiltered": filteredCount,
@@ -97,13 +97,17 @@ exports.recentOrders = async function (req, res) {
         });
     }).catch((err) => {
         console.log(err)
+        throw err;
     })
 }
 
 exports.orderedMedicines = async (req, res) => {
-    //console.log(req.body)
-    placedOrder.find({"_id" : req.body.ides}).then((result) => {
-        console.log(result)
+    PlacedOrder.find({
+        "_id": req.body.ides
+    }).then((result) => {
         res.send(result)
+    }).catch((err) => {
+        console.log(err)
+        throw err;
     })
 }

@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var billing = require("./billingSchema")
-
 var userSchema = new Schema({
     name: {
         type: String,
@@ -28,12 +26,10 @@ var userSchema = new Schema({
     billing_details: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "billings",
-        required: true
     },
     userdetails: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "userdetails",
-        required: true
     },
 })
 

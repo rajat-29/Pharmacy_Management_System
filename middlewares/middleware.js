@@ -6,14 +6,21 @@ function checkSession(req, res, next) {
 }
 
 function checkAdmin(req, res, next) {
-    if (req.session.role === "Admin")
+    if (req.session.role == "Admin")
         next();
     else
         res.redirect("/");
 }
 
 function checkVendor(req, res, next) {
-    if (req.session.role === "Vendor")
+    if (req.session.role == "Vendor")
+        next();
+    else
+        res.redirect("/");
+}
+
+function checkShopkeeper(req, res, next) {
+    if (req.session.role == "Shopkeeper")
         next();
     else
         res.redirect("/");
@@ -22,3 +29,4 @@ function checkVendor(req, res, next) {
 module.exports.checkAdmin = checkAdmin;
 module.exports.checkSession = checkSession;
 module.exports.checkVendor = checkVendor;
+module.exports.checkShopkeeper = checkShopkeeper;

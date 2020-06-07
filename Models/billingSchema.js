@@ -3,20 +3,20 @@ var Schema = mongoose.Schema;
 
 var billingSchema = new Schema({
     custname: {
-        type:  String, 
+        type: String,
         required: true
     },
     docname: {
-        type:  String, 
+        type: String,
         required: true
     },
     contact: {
-        type:  String, 
+        type: String,
         required: true
     },
     items: [Object],
     total: {
-        type: Number, 
+        type: Number,
         required: true
     },
 })

@@ -33,14 +33,14 @@ function deleteMedicine(ides) {
         var filename = '/admin/deleteMed/' + ides
         var request = new XMLHttpRequest();
         request.open('POST', filename);
-        request.send()
         request.addEventListener("load", function (event) {
             var res = request.responseText;
-            if (res === "True")
+            if (res == "true")
                 alert("Medicine Deleted")
             else
-                alert("Medicine Filed To Delete")
+                alert("Medicine Failed To Delete")
             table.ajax.reload(null, false);
         });
+        request.send()
     })
 }

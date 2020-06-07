@@ -1,34 +1,25 @@
 var table;
 
 $(document).ready(function () {
-    table = $('#shopekeepertable').DataTable({
+    table = $('#vendorstock').DataTable({
         "processing": true,
         "serverSide": true,
         "dataSrc": "",
         "ajax": {
-            "url": "/admin/shopkeeperstable",
+            "url": "/vendor/vendorstock",
             "type": "POST",
         },
         "columns": [{
-                "data": "name"
+                "data": "medicineType.name"
             },
             {
-                "data": "email",
+                "data": "no_of_stock"
             },
             {
-                "data": "DOB"
+                "data": "price"
             },
             {
-                "data": "userdetails.address"
-            },
-            {
-                "data": "userdetails.phoneno"
-            },
-            {
-                "data": "userdetails.state"
-            },
-            {
-                "data": "userdetails.city"
+                "data": "isActive"
             },
             {
                 "data": null
@@ -38,25 +29,25 @@ $(document).ready(function () {
             "targets": -1,
             "render": function (data, type, row, meta) {
 
-                return '<span id="deleteShopkeeperBtn" onclick=deleteShopkeeper("' + row._id + '")><i class="fa fa-trash"></i></span>'
+                return '<button id="deactivateBtn" onclick=deactivate("' + row._id + '")><i class="fa fa-toggle-on"></i></button>'
 
             }
         }],
     });
 });
 
-function deleteShopkeeper(ides) {
-    $(document).on("click", "#deleteShopkeeperBtn", function () {
+function deactivate(ides) {
+    $(document).on("click", "#deactivateBtn", function () {
 
-        var filename = '/admin/deleteShopkeeper/' + ides
+        var filename = '/vendor/deactivate/' + ides
         var request = new XMLHttpRequest();
         request.open('POST', filename);
         request.addEventListener("load", function (event) {
             var res = request.responseText;
             if (res == "true")
-                alert("Shopkeeper Removed")
+                alert("Stock Deactivated")
             else
-                alert("Shopkeeper Failed To Removed")
+                alert("Stock Failed To deactivate")
             table.ajax.reload(null, false);
         });
         request.send()

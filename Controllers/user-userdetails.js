@@ -17,7 +17,7 @@ exports.getProfileDetails = async (req, res) => {
     })
 }
 
-module.exports.vendorstable = async function (req, res) {
+module.exports.vendorstable = async (req, res) => {
     let query = {};
     let params = {};
 
@@ -28,24 +28,24 @@ module.exports.vendorstable = async function (req, res) {
             "name": {
                 '$regex': req.body.search.value,
                 '$options': 'i'
+            },
+            "email": {
+                '$regex': req.body.search.value,
+                '$options': 'i'
             }
         }]
     }
-    let sortingType;
-    if (req.body.order[0].dir === 'asc')
-        sortingType = 1;
-    else
-        sortingType = -1;
-
     Users.find(query, {}, params).populate('userdetails').then((data) => {
         Users.countDocuments(query, function (err, filteredCount) {
-            if (err)
+            if (err) {
                 console.log(err);
-            else {
+                throw err;
+            } else {
                 Users.countDocuments(function (err, totalCount) {
-                    if (err)
+                    if (err) {
                         console.log(err);
-                    else
+                        throw err;
+                    } else
                         res.send({
                             "recordsTotal": totalCount,
                             "recordsFiltered": filteredCount,
@@ -56,6 +56,7 @@ module.exports.vendorstable = async function (req, res) {
         });
     }).catch((err) => {
         console.log(err)
+        throw err;
     })
 }
 
@@ -70,24 +71,25 @@ module.exports.shopkeeperstable = async function (req, res) {
             "name": {
                 '$regex': req.body.search.value,
                 '$options': 'i'
+            },
+            "email": {
+                '$regex': req.body.search.value,
+                '$options': 'i'
             }
         }]
     }
-    let sortingType;
-    if (req.body.order[0].dir === 'asc')
-        sortingType = 1;
-    else
-        sortingType = -1;
 
     Users.find(query, {}, params).populate('userdetails').then((data) => {
         Users.countDocuments(query, function (err, filteredCount) {
-            if (err)
+            if (err) {
                 console.log(err);
-            else {
+                throw err;
+            } else {
                 Users.countDocuments(function (err, totalCount) {
-                    if (err)
+                    if (err) {
                         console.log(err);
-                    else
+                        throw err;
+                    } else
                         res.send({
                             "recordsTotal": totalCount,
                             "recordsFiltered": filteredCount,
@@ -109,7 +111,6 @@ module.exports.updateprofile = (req, res) => {
     }).then((
         result
     ) => {
-        console.log(result)
         if (result != null)
             res.send("true")
         else

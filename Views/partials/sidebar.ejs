@@ -42,15 +42,26 @@
             </li>
 
             <% if( user_details.role == "Shopkeeper"){ %>
-                <li tabIndex="0">
-                    <a href="/admin/recentOrders">
-                        <span style="color: white" class="menu-links">
-                            <i class="fa fa-shopping-cart fa-2x" style="color: white;margin-right: 20px;"></i>
-                           Recent Orders
-                        </span>
-                    </a>
-                </li>
-                <% } %>
+            <li tabIndex="0">
+                <a href="/admin/recentOrders">
+                    <span style="color: white" class="menu-links">
+                        <i class="fa fa-shopping-cart fa-2x" style="color: white;margin-right: 20px;"></i>
+                        Recent Orders
+                    </span>
+                </a>
+            </li>
+            <% } %>
+
+            <% if( user_details.role == "Vendor"){ %>
+            <li tabIndex="0">
+                <a href="/vendor/vendorstock">
+                    <span style="color: white" class="menu-links">
+                        <i class="fa fa-archive fa-2x" style="color: white;margin-right: 20px;"></i>
+                        Manage My Stock
+                    </span>
+                </a>
+            </li>
+            <% } %>
 
             <% if( user_details.role == "Admin"){ %>
             <li tabIndex="0">
@@ -74,6 +85,7 @@
             </li>
             <% } %>
 
+            <% if( user_details.role == "Admin"){ %>
             <li tabIndex="0">
                 <a href="/admin/manageMedicines">
                     <span style="color: white" class="menu-links">
@@ -82,6 +94,7 @@
                     </span>
                 </a>
             </li>
+            <% } %>
 
             <% if( user_details.role == "Admin"){ %>
             <li tabIndex="0">

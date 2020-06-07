@@ -3,19 +3,19 @@ var Schema = mongoose.Schema;
 
 var placedOrderSchema = new Schema({
     custname: {
-        type:  String, 
+        type: String,
         required: true
     },
     docname: {
-        type:  String, 
+        type: String,
         required: true
     },
     contact: {
-        type:  String, 
+        type: String,
         required: true
     },
     address: {
-        type:  String, 
+        type: String,
         required: true
     },
     items: [Object],

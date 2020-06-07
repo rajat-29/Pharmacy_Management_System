@@ -4,7 +4,7 @@ function addStock() {
     var price = document.getElementById("price").value;
 
     if (ids == "" || stock == "" || price == "") {
-        alert("Fields Empty");
+        alert("Fields are Empty");
         return;
     }
 

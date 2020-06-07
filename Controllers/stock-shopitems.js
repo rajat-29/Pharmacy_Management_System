@@ -1,5 +1,4 @@
 var Stock = require("../Models/stockSchema")
-var Medicine = require("../Models/medSchema")
 var Shopitems = require("../Models/shopitems")
 
 exports.buy = async (req, res) => {
@@ -52,7 +51,6 @@ exports.buy = async (req, res) => {
 
 exports.fetchMedicines = async (req, res) => {
     Shopitems.find({}).populate("medicineType").then((result) => {
-        console.log(result)
         res.send(result);
     }).catch((err) => {
         console.log(err);

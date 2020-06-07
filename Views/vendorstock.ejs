@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manage Vendors</title>
+    <title>Manage My Stock</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
@@ -30,20 +30,17 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-10" style="border: 5px solid rgba(0,0,0,0.1);margin-top: 40px;">
                 <center>
-                    <h1 class="heading" style="color: black;"><u>Manage Vendors</u></h1>
+                    <h1 class="heading" style="color: black;"><u>Manage My Stock</u></h1>
                 </center>
                 <div>
-                    <table class="table table-bordered" id="vendorstable">
+                    <table class="table table-bordered" id="vendorstock">
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>DOB</th>
-                                <th>Address</th>
-                                <th>Phone No</th>
-                                <th>State</th>
-                                <th>City</th>
-                                <th>Remove</th>
+                                <th>No of Stock</th>
+                                <th>Price</th>
+                                <th>isActive</th>
+                                <th>Deactivate</th>
                             </tr>
                         </thead>
                         <tbody id="list"></tbody>
@@ -53,7 +50,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="/scripts/vendorstable.js"></script>
+    <script type="text/javascript" src="/scripts/vendorstock-js.js"></script>
 </body>
 
 </html>

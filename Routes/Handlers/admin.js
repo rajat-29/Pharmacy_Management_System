@@ -24,6 +24,9 @@ app.get("/manageMedicines", Middleware.checkSession, Middleware.checkAdmin, func
     });
 });
 
+/* Manage Medicine Table */
+app.post("/manageMedicines", Middleware.checkSession, Middleware.checkAdmin, Controllers.Medicine.manageMedicines);
+
 /* Add Medicine */
 app.post("/addMedicineType", Middleware.checkSession, Middleware.checkAdmin, Controllers.Medicine.addMedicineType);
 
@@ -40,6 +43,8 @@ app.get("/vendorstable", Middleware.checkSession, Middleware.checkAdmin, functio
 /* Manage Vendors Table Data */
 app.post("/vendorstable", Middleware.checkSession, Middleware.checkAdmin, Controllers.userdetails.vendorstable);
 
+app.post("/deleteVendor/:id", Middleware.checkSession, Middleware.checkAdmin, Controllers.user.deleteVendor);
+
 /* Manage Shopkeepers */
 app.get("/shopkeeperstable", Middleware.checkSession, Middleware.checkAdmin, function (req, res) {
     res.render("shopkeeperstable", {
@@ -49,6 +54,9 @@ app.get("/shopkeeperstable", Middleware.checkSession, Middleware.checkAdmin, fun
 
 /* Manage Shopkeepers Table Data */
 app.post("/shopkeeperstable", Middleware.checkSession, Middleware.checkAdmin, Controllers.userdetails.shopkeeperstable);
+
+/* Delete Shopkeepers User */
+app.post("/deleteShopkeeper/:id", Middleware.checkSession, Middleware.checkAdmin, Controllers.user.deleteShopkeeper);
 
 app.get("/buystock", function (req, res) {
     res.render("buystock", {
@@ -78,8 +86,6 @@ app.get("/stock/:id", Controllers.stock.stockdetails);
 app.get("/fetchMedicines", Controllers.stockshopitems.fetchMedicines);
 
 app.post("/addBill", Controllers.billing.addBill);
-
-app.post("/manageMedicines", Controllers.Medicine.manageMedicines);
 
 app.post("/manageBills", Controllers.billing.manageBills);
 

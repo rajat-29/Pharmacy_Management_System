@@ -83,10 +83,34 @@ exports.changepassword = (req, res) => {
 }
 
 module.exports.placedOrder = (req, res) => {
-    placedOrder.create(req.body, function (error, res) {
-        if (error)
-            throw error;
-        else {}
+    placedOrder.create(req.body).then((result) => {
+        res.send("data saved");
+    }).catch((err) => {
+        console.log(err)
+        throw err;
+    });
+}
+
+module.exports.deleteVendor = (req, res) => {
+    var id = req.params.id.toString();
+    Users.deleteOne({
+        _id: id
+    }).then((result) => {
+        res.send("true")
+    }).catch((err) => {
+        console.log(err);
+        throw err
     })
-    res.send("data saved");
+}
+
+module.exports.deleteShopkeeper = (req, res) => {
+    var id = req.params.id.toString();
+    Users.deleteOne({
+        _id: id
+    }).then((result) => {
+        res.send("true")
+    }).catch((err) => {
+        console.log(err);
+        throw err
+    })
 }
