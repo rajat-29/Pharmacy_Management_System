@@ -164,3 +164,64 @@ npm install bcrpty  / npm i bcrpty
 | Items         | Array    |
 | Total         | Number   |
 
+
+## Directory
+
+```bash
+|___ Root
+|   |--- app.js
+|   |
+|   |--- Controller
+|   |    |--- billing.js
+|   |    |--- index.js
+|   |    |--- medicine.js
+|   |    |--- shopitem.js
+|   |    |--- stock-shopitem.js
+|   |    |--- user.js
+|   |    |--- user-details.js
+|   |
+|   |
+|   |--- Middlewares
+|   |    |--- middleware.js
+|   |
+|   |--- Models
+|   |    |--- billingSchema.js
+|   |    |--- medSchema.js
+|   |    |--- placedOrderSchema.js
+|   |    |--- shopSchema.js
+|   |    |--- stockSchema.js
+|   |    |--- userDetailsSchema.js
+|   |    |--- UserSchema.js
+|   |
+|   |--- Public
+|   |    |--- css (Static)
+|   |    |--- images (Static)
+|   |    |--- script (Static)
+|   |
+|   |--- Routes
+|   |    |--- Handlers
+|   |    |    |--- admin.js
+|   |    |    |--- shopkeeper.js
+|   |    |    |--- user.js
+|   |    |    |--- login.js
+|   |    |--- index.js
+|   |
+|   |--- viwes
+|   |    |--- partials
+|   |    |    |--- sidebar.ejs
+|   |    |--- addMedicine.ejs
+|   |    |--- addStock.ejs
+|   |    |--- billingLogs.ejs
+|   |    |--- buystock.ejs
+|   |    |--- changepassword.ejs
+|   |    |--- dashboard.ejs
+|   |    |--- login.ejs
+|   |    |--- manageMedicines.ejs
+|   |    |--- orderMedicines.ejs
+|   |    |--- profile.ejs
+|   |    |--- recentOrders.ejs
+|   |    |--- shopkeeperstable.ejs
+|   |    |--- stockdetails.ejs
+|   |    |--- vendorstable.ejs
+|   |    |--- vendorstock.ejs
+```
