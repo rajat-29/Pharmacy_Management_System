@@ -118,10 +118,49 @@ npm install bcrpty  / npm i bcrpty
 
 <h4><b>Stock Schema</b></h4>
 
-| Name          | Type   |
-| ------------- | ------ |
+| Name          | Type     |
+| ------------- | -------- |
 | User          | ObjectId |
 | MedicineType  | ObjectId |
-| NoofStock     | Number |
-| Price         | Number  |
-| isActive      | Boolean |
+| NoofStock     | Number   |
+| Price         | Number   |
+| isActive      | Boolean  |
+
+
+<h4><b>ShopItem Schema</b></h4>
+
+| Name          | Type     |
+| ------------- | -------- |
+| User          | ObjectId |
+| MedicineType  | ObjectId |
+| NoofStock     | Number   |
+| Price         | Number   |
+| boughtFrom    | Boolean  |
+
+
+<h4><b>PlacedOrder Schema</b></h4>
+
+| Name          | Type     |
+| ------------- | -------- |
+| CustomerName  | String   |
+| DoctorName    | String   |
+| Contact       | String   |
+| Address       | String   |
+| Items         | Array    |
+
+<h4><b>Medicine Schema</b></h4>
+
+| Name          | Type     |
+| ------------- | -------- |
+| Name          | String   |
+
+<h4><b>PlacedOrder Schema</b></h4>
+
+| Name          | Type     |
+| ------------- | -------- |
+| CustomerName  | String   |
+| DoctorName    | String   |
+| Contact       | String   |
+| Items         | Array    |
+| Total         | Number   |
+
