@@ -64,3 +64,64 @@ Password: admincq<br>
   <li>Bcrypt</li>
   <li>HTTP</li>
 </ul>
+
+- Express
+
+```
+npm install express
+```
+
+- EJS
+
+```
+npm install ejs
+```
+
+- Express-Session
+
+```
+npm install express-session
+```
+
+- Mongoose
+
+```
+npm install mongoose
+```
+
+- Dotenv
+
+```
+npm install dotenv
+```
+
+- Bcrpty
+
+```
+npm install bcrpty  / npm i bcrpty
+```
+
+
+## Schema
+
+<h4><b>User Schema</b></h4>
+
+| Name         | Type     | Required | Unique | Encrpyted |
+| ------------ | -------- | -------- | ------ | --------- |
+| Name         | String   | Yes      | No     | No        |
+| Email        | String   | Yes      | Yes    | No        |
+| Password     | String   | Yes      | No     | Yes       |
+| DOB          | String   | Yes      | No     | No        |
+| Role         | String   | Yes      | No     | No        |
+| billDetails  | ObjectId | No       | No     | No        |
+| userdetails  | ObjectId | No       | No     | No        |
+
+<h4><b>Stock Schema</b></h4>
+
+| Name          | Type   |
+| ------------- | ------ |
+| User          | ObjectId |
+| MedicineType  | ObjectId |
+| NoofStock     | Number |
+| Price         | Number  |
+| isActive      | Boolean |
