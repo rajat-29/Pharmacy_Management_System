@@ -1,144 +1,144 @@
 <div class="custom_sidebar">
-    <div class="top-bar">
-        <div class="dropdown" style="float: right;margin-right: 90px;margin-top:5px;padding: 2px;">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">
-                User
-            </button>
-            <div class="dropdown-menu m-2 p-2" aria-labelledby="dropdownMenuButton">
-                <div style="display: flex;flex-direction: column;">
-                    <a class=" dropdown-item" style="padding: 2px;" href="/user/profile">Profile</a>
-                    <a class="dropdown-item" style="padding: 2px;" href="/user/changepassword">Change Password</a>
-                    <a class="dropdown-item" style="padding: 2px;" onclick="logoutUser()" href="#">LogOut</a>
-                </div>
-            </div>
+  <div class="top-bar">
+    <div class="dropdown" style="float: right;margin-right: 90px;margin-top:5px;padding: 2px;">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" style="color: black;">
+        User
+      </button>
+      <div class="dropdown-menu m-2 p-2" aria-labelledby="dropdownMenuButton">
+        <div style="display: flex;flex-direction: column;">
+          <a class=" dropdown-item" style="padding: 2px;" href="/user/profile">Profile</a>
+          <a class="dropdown-item" style="padding: 2px;" href="/user/changepassword">Change Password</a>
+          <a class="dropdown-item" style="padding: 2px;" onclick="logoutUser()" href="#">LogOut</a>
         </div>
+      </div>
     </div>
+  </div>
 
-    <nav class="menu" tabIndex="0">
+  <nav class="menu" tabIndex="0">
 
-        <header class="avatar">
-            <img src="/images/a.svg" alt="..." />
-            <h3 style="color:#fff">Pharma Track</h3>
-        </header>
+    <header class="avatar">
+      <img src="/images/a.svg" alt="..." />
+      <h3 style="color:#fff">Pharma Track</h3>
+    </header>
 
-        <ul>
-            <% if( user_details.role == "Shopkeeper"){ %>
-            <li tabIndex="0">
-                <a href="/user/dashboard">
-                    <span style="color: white" class="menu-links">
-                        <i class="fas fa-tachometer-alt fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Dashboard
-                    </span>
-                </a>
-            </li>
-            <% } %>
+    <ul>
+      <% if( user_details.role == "Shopkeeper"){ %>
+      <li tabIndex="0">
+        <a href="/user/dashboard">
+          <span style="color: white" class="menu-links">
+            <i class="fas fa-tachometer-alt fa-2x" style="color: white;margin-right: 20px;"></i>
+            Dashboard
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Shopkeeper"){ %>
-            <li tabIndex="0">
-                <a href="/admin/billingLogs">
-                    <span style="color: white" class="menu-links">
-                        <i class="fas fa-clipboard-list fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Billing Logs
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Shopkeeper"){ %>
+      <li tabIndex="0">
+        <a href="/admin/billingLogs">
+          <span style="color: white" class="menu-links">
+            <i class="fas fa-clipboard-list fa-2x" style="color: white;margin-right: 20px;"></i>
+            Billing Logs
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Shopkeeper"){ %>
-            <li tabIndex="0">
-                <a href="/admin/recentOrders">
-                    <span style="color: white" class="menu-links">
-                        <i class="fa fa-shopping-cart fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Recent Orders
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Shopkeeper"){ %>
+      <li tabIndex="0">
+        <a href="/admin/recentOrders">
+          <span style="color: white" class="menu-links">
+            <i class="fa fa-shopping-cart fa-2x" style="color: white;margin-right: 20px;"></i>
+            Recent Orders
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Vendor"){ %>
-            <li tabIndex="0">
-                <a href="/vendor/vendorstock">
-                    <span style="color: white" class="menu-links">
-                        <i class="fa fa-archive fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Manage My Stock
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Vendor"){ %>
+      <li tabIndex="0">
+        <a href="/vendor/vendorstock">
+          <span style="color: white" class="menu-links">
+            <i class="fa fa-archive fa-2x" style="color: white;margin-right: 20px;"></i>
+            Manage My Stock
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Admin"){ %>
-            <li tabIndex="0">
-                <a href="/admin/addMedicine">
-                    <span style="color: white" class="menu-links">
-                        <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Add Medicines
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Admin"){ %>
+      <li tabIndex="0">
+        <a href="/admin/addMedicine">
+          <span style="color: white" class="menu-links">
+            <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
+            Add Medicines
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Vendor"){ %>
-            <li tabIndex="0">
-                <a href="/vendor/addStock">
-                    <span style="color: white" class="menu-links">
-                        <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Add Stocks
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Vendor"){ %>
+      <li tabIndex="0">
+        <a href="/vendor/addStock">
+          <span style="color: white" class="menu-links">
+            <i class="fa fa-medkit fa-2x" style="color: white;margin-right: 20px;"></i>
+            Add Stocks
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Admin"){ %>
-            <li tabIndex="0">
-                <a href="/admin/manageMedicines">
-                    <span style="color: white" class="menu-links">
-                        <i class="fas fa-table fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Manage Medicines
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Admin"){ %>
+      <li tabIndex="0">
+        <a href="/admin/manageMedicines">
+          <span style="color: white" class="menu-links">
+            <i class="fas fa-table fa-2x" style="color: white;margin-right: 20px;"></i>
+            Manage Medicines
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Admin"){ %>
-            <li tabIndex="0">
-                <a href="/admin/vendorstable">
-                    <span style="color: white" class="menu-links">
-                        <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Manage Vendors
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Admin"){ %>
+      <li tabIndex="0">
+        <a href="/admin/vendorstable">
+          <span style="color: white" class="menu-links">
+            <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
+            Manage Vendors
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Admin"){ %>
-            <li tabIndex="0">
-                <a href="/admin/shopkeeperstable">
-                    <span style="color: white" class="menu-links">
-                        <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Manage Shopkeepers
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Admin"){ %>
+      <li tabIndex="0">
+        <a href="/admin/shopkeeperstable">
+          <span style="color: white" class="menu-links">
+            <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
+            Manage Shopkeepers
+          </span>
+        </a>
+      </li>
+      <% } %>
 
-            <% if( user_details.role == "Shopkeeper"){ %>
-            <li tabIndex="0">
-                <a href="/admin/buystock">
-                    <span style="color: white" class="menu-links">
-                        <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
-                        Buy Stock
-                    </span>
-                </a>
-            </li>
-            <% } %>
+      <% if( user_details.role == "Shopkeeper"){ %>
+      <li tabIndex="0">
+        <a href="/admin/buystock">
+          <span style="color: white" class="menu-links">
+            <i class="fas fa-users fa-2x" style="color: white;margin-right: 20px;"></i>
+            Buy Stock
+          </span>
+        </a>
+      </li>
+      <% } %>
 
 
-        </ul>
-    </nav>
+    </ul>
+  </nav>
 </div>
 <script>
-    function logoutUser() {
-        window.location = '/user/logutUser';
-    }
+  function logoutUser() {
+    window.location = '/user/logutUser';
+  }
 </script>
