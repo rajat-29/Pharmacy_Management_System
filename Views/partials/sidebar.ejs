@@ -23,6 +23,7 @@
         </header>
 
         <ul>
+            <% if( user_details.role == "Shopkeeper"){ %>
             <li tabIndex="0">
                 <a href="/user/dashboard">
                     <span style="color: white" class="menu-links">
@@ -31,7 +32,9 @@
                     </span>
                 </a>
             </li>
+            <% } %>
 
+            <% if( user_details.role == "Shopkeeper"){ %>
             <li tabIndex="0">
                 <a href="/admin/billingLogs">
                     <span style="color: white" class="menu-links">
@@ -40,6 +43,7 @@
                     </span>
                 </a>
             </li>
+            <% } %>
 
             <% if( user_details.role == "Shopkeeper"){ %>
             <li tabIndex="0">
